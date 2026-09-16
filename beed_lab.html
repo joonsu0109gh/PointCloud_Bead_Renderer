@@ -73,6 +73,11 @@
   .sw{display:flex;gap:5px;margin-top:6px}
   .sw i{flex:1;height:19px;cursor:pointer;border:1px solid #333c49}
   .sw i.on{outline:1px solid var(--accent);outline-offset:1px}
+  input[type=color]{-webkit-appearance:none;appearance:none;width:100%;height:24px;padding:0;
+    border:1px solid #333c49;background:#20252d;cursor:pointer}
+  input[type=color]::-webkit-color-swatch-wrapper{padding:3px}
+  input[type=color]::-webkit-color-swatch{border:0}
+  input[type=color]::-moz-color-swatch{border:0}
   #gizmo{position:absolute;left:10px;bottom:30px;pointer-events:none}
   #gizmoTxt{position:absolute;left:12px;bottom:10px;font-size:9.5px;letter-spacing:.08em;
     color:#98a1ad;pointer-events:none;font-variant-numeric:tabular-nums;mix-blend-mode:difference}
@@ -133,6 +138,8 @@
       <div class="row"><label>tessellation</label><span class="val" id="v_detail"></span>
         <input type="range" id="detail" min="0" max="3" step="1"></div>
       <div class="sw" id="sw"></div>
+      <label style="display:block;margin-top:8px;color:var(--dim);font-size:10.5px;letter-spacing:.04em">custom
+        <input type="color" id="colorPick" value="#dfe3e7"></label>
     </section>
 
     <section>
@@ -785,9 +792,11 @@ $("fname").addEventListener("keydown", e=>{
   if (e.key === "Enter"){ e.preventDefault(); $("save").click(); }
 });
 
-// 색상 스와치
+// 색상 스와치 + 연속 색상 선택
 const COLORS = [0xdfe3e7, 0xf2ece1, 0xc9d3dd, 0xd9b08c, 0x9fb4a7, 0x5c6672];
 const swWrap = $("sw");
+const colorPick = $("colorPick");
+colorPick.value = "#" + S.color.toString(16).padStart(6,"0");
 COLORS.forEach((c,k)=>{
   const el = document.createElement("i");
   el.style.background = "#"+c.toString(16).padStart(6,"0");
@@ -795,9 +804,15 @@ COLORS.forEach((c,k)=>{
   el.onclick = ()=>{
     [...swWrap.children].forEach(x=>x.classList.remove("on"));
     el.classList.add("on"); S.color = c; material.color.setHex(0xffffff); applyTint();
+    colorPick.value = "#"+c.toString(16).padStart(6,"0");
   };
   swWrap.appendChild(el);
 });
+colorPick.oninput = ()=>{
+  S.color = parseInt(colorPick.value.slice(1), 16);
+  material.color.setHex(0xffffff); applyTint();
+  [...swWrap.children].forEach(x=>x.classList.remove("on"));
+};
 
 // 파일 로드 (버튼 + 드래그앤드롭)
 $("loadply").onclick = ()=> $("file").click();
@@ -845,6 +860,7 @@ function syncUI(){
   $("ground").checked  = S.ground;
   $("spin2").checked   = S.spin;
   [...swWrap.children].forEach((el,k)=>el.classList.toggle("on", COLORS[k]===S.color));
+  colorPick.value = "#" + S.color.toString(16).padStart(6,"0");
   viewToUI();
   applyRotation();
 }
