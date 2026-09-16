@@ -5,6 +5,8 @@ single-page viewer built with Three.js, with controls for lighting, materials,
 camera position, and PNG export. `index.html` is the project page (this
 overview, with a live example gallery); `beed_lab.html` is the viewer itself.
 
+![Bead Lab interface: point cloud viewer on the left, shape/bead/lighting/camera/export control panel on the right](docs/images/interface.png)
+
 | `examples/sample_pcd_3000.ply` (3,000 vertices) | `examples/sample_pcd_10000.ply` (10,000 vertices) |
 | --- | --- |
 | ![Bead render of examples/sample_pcd_3000.ply, a 3,000-point cloud](docs/images/bead_render_3000.png) | ![Bead render of examples/sample_pcd_10000.ply, a 10,000-point cloud](docs/images/bead_render_10000.png) |

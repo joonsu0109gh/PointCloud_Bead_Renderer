@@ -52,6 +52,9 @@
   section h3.title{margin:0 0 30px;font-size:24px;color:#fff;font-weight:600;letter-spacing:-.01em}
   section > p.intro{margin:0 0 32px;max-width:64ch;color:var(--dim);font-size:13.5px;line-height:1.7}
 
+  figure.screenshot{margin:0;border:1px solid var(--line);background:var(--panel)}
+  figure.screenshot img{width:100%;display:block}
+
   .gallery{display:grid;grid-template-columns:1fr 1fr;gap:24px}
   figure{margin:0;border:1px solid var(--line);background:var(--panel)}
   figure a.thumb{display:block;background:#0d0f13}
@@ -97,6 +100,7 @@
   <div class="wrap">
     <a class="brand" href="./index.html">Bead Lab</a>
     <div class="links">
+      <a href="#interface">Interface</a>
       <a href="#examples">Examples</a>
       <a href="#features">Features</a>
       <a href="#quickstart">Quick&nbsp;start</a>
@@ -124,6 +128,21 @@
     <p class="meta">Static HTML + <code>Three.js r128</code> &nbsp;·&nbsp; no install &nbsp;·&nbsp; MIT licensed</p>
   </div>
 </header>
+
+<section id="interface">
+  <div class="wrap">
+    <h2>Interface</h2>
+    <h3 class="title">Viewer + control panel</h3>
+    <p class="intro">Everything lives in one screen: the 3D view on the left, and shape,
+      bead, lighting, camera, and export controls in the panel on the right.</p>
+    <figure class="screenshot">
+      <a href="./beed_lab.html">
+        <img src="./docs/images/interface.png"
+             alt="Bead Lab interface showing a bead-rendered point cloud on the left and the shape, bead, lighting, and camera control panel on the right">
+      </a>
+    </figure>
+  </div>
+</section>
 
 <section id="examples">
   <div class="wrap">
