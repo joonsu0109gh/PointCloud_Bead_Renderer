@@ -2,14 +2,22 @@
 
 Render point clouds as shaded 3D beads in your browser. Bead Lab is a static,
 single-page viewer built with Three.js, with controls for lighting, materials,
-camera position, and PNG export.
+camera position, and PNG export. `index.html` is the project page (this
+overview, with a live example gallery); `beed_lab.html` is the viewer itself.
 
-![Example rendering of a 3,000-point cloud](docs/images/bead_render_3000.png)
+| `examples/sample_pcd_3000.ply` (3,000 vertices) | `examples/sample_pcd_10000.ply` (10,000 vertices) |
+| --- | --- |
+| ![Bead render of examples/sample_pcd_3000.ply, a 3,000-point cloud](docs/images/bead_render_3000.png) | ![Bead render of examples/sample_pcd_10000.ply, a 10,000-point cloud](docs/images/bead_render_10000.png) |
+
+Both renders were produced by loading the matching example file into Bead Lab
+with default studio lighting; see [Use your own point cloud](#use-your-own-point-cloud).
 
 ## Quick start
 
-Open `index.html` in a desktop browser with WebGL support. Internet access is
-required to load Three.js r128 from cdnjs; there is no build or package install.
+Open `beed_lab.html` in a desktop browser with WebGL support. Internet access
+is required to load Three.js r128 from cdnjs; there is no build or package
+install. `index.html` is a static project page that links to it and is not
+the viewer itself.
 
 Alternatively, serve the repository locally with Python 3:
 
@@ -17,8 +25,8 @@ Alternatively, serve the repository locally with Python 3:
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-Then visit <http://localhost:8000>. The viewer starts with a built-in sample.
-The former `beed_lab.html` entry point redirects to `index.html`.
+Then visit <http://localhost:8000/beed_lab.html>. The viewer starts with a
+built-in sample.
 
 ## Use your own point cloud
 
@@ -30,9 +38,9 @@ The former `beed_lab.html` entry point redirects to `index.html`.
 
 Try `examples/sample_pcd_3000.ply` first, then import
 `examples/sample_bead_preset.json` using **import .json** or drag and drop.
-`examples/sample_pcd_10000.ply` provides a denser example. Reference renders
-are in `docs/images/`; output appearance and resolution depend on the settings
-and browser viewport.
+`examples/sample_pcd_10000.ply` provides a denser example of the same shape.
+The renders above are reference output for these two files; actual appearance
+and resolution depend on your settings and browser viewport.
 
 Presets save appearance and camera settings, **not point coordinates**. Load
 the PLY separately before applying a preset for an imported cloud. Generated
@@ -70,22 +78,24 @@ and an updated script URL.
 ## Repository layout
 
 ```text
-index.html                     Viewer, styles, and application code
-beed_lab.html                  Redirect for the original entry point
+index.html                     Project page: overview and example gallery
+beed_lab.html                  Viewer, styles, and application code
 examples/                      Example PLY files and a JSON preset
-docs/images/                   Reference PNG renders
+docs/images/                   Reference PNG renders, tied to the examples above
 LICENSE                        MIT license
 ```
 
 ## Development and hosting
 
-Edit `index.html` and reload the browser; no build step is required. Before
+Edit `beed_lab.html` and reload the browser; no build step is required. Before
 submitting a change, check the built-in sample, both example PLY files, preset
 import/export, camera controls, and PNG export, and inspect the browser console
 for errors. Include the browser and reproduction steps when reporting a bug.
+`index.html` (the project page) can be edited independently.
 
 The repository can be served by any static host. For GitHub Pages, configure
-deployment from the repository root in the repository's Pages settings.
+deployment from the repository root in the repository's Pages settings; the
+root `index.html` becomes the site's landing page automatically.
 
 ## License
 
