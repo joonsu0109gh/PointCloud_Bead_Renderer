@@ -1,0 +1,30 @@
+# Local editor and agent state
+.idea/
+.vscode/
+.agents/
+.codex/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Local credentials and environment overrides
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python local-server/development artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# User exports (curated samples live in examples/ and docs/images/)
+/bead_render*.png
+/bead_render*.json
+/bead_*.png
+/bead_*.json
+/exports/
+*.log
