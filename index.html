@@ -34,7 +34,8 @@
   header.hero h1{margin:0 0 18px;font-size:40px;line-height:1.15;letter-spacing:-.01em;
     font-weight:600;color:#fff}
   header.hero p.lede{margin:0 0 30px;max-width:56ch;color:var(--dim);font-size:15px;line-height:1.65}
-  .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+  .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:28px}
+  .gh-star{display:inline-flex;align-items:center;height:38px}
   .btn{display:inline-block;padding:12px 20px;font:inherit;font-size:11.5px;letter-spacing:.08em;
     text-transform:uppercase;text-decoration:none;border:1px solid var(--line);color:var(--txt);
     background:#20252d;transition:.12s}
@@ -114,6 +115,11 @@
     <div class="cta-row">
       <a class="btn primary" href="./beed_lab.html">Launch Bead Lab →</a>
       <a class="btn" href="https://github.com/joonsu0109gh/PCD_Renderer">View source on GitHub</a>
+      <span class="gh-star">
+        <a class="github-button" href="https://github.com/joonsu0109gh/PCD_Renderer" data-icon="octicon-star"
+           data-size="large" data-show-count="true"
+           aria-label="Star joonsu0109gh/PCD_Renderer on GitHub">Star</a>
+      </span>
     </div>
     <p class="meta">Static HTML + <code>Three.js r128</code> &nbsp;·&nbsp; no install &nbsp;·&nbsp; MIT licensed</p>
   </div>
@@ -235,5 +241,6 @@ python3 -m http.server 8000 --bind 127.0.0.1
   </div>
 </footer>
 
+<script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 </html>
