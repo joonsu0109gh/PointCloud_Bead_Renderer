@@ -1,4 +1,4 @@
-# PCD Renderer
+# Point Cloud Bead Renderer
 
 Render point clouds as shaded 3D beads in your browser. Bead Lab is a static,
 single-page viewer built with Three.js, with controls for lighting, materials,
