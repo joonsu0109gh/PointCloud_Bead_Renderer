@@ -1,0 +1,42 @@
+{
+  "format": "bead-lab-preset",
+  "version": 1,
+  "saved": "2026-09-14T13:27:55.551Z",
+  "params": {
+    "shape": "loaded",
+    "count": 1500,
+    "srad": 0.5,
+    "sh": 1.5,
+    "jit": 0,
+    "fill": false,
+    "brad": 0.036,
+    "rough": 0.65,
+    "metal": 0,
+    "detail": 2,
+    "color": "#dfe3e7",
+    "lazim": 180,
+    "lelev": 17,
+    "lint": 0.65,
+    "amb": 0.04,
+    "shadow": true,
+    "ssoft": 8,
+    "ground": false,
+    "tmode": "key",
+    "tstr": 1,
+    "tfloor": 1,
+    "tgam": 0.3,
+    "knn": 42,
+    "bg": "#ffffff",
+    "fov": 37,
+    "spin": false,
+    "spd": 0.5,
+    "rotx": -26,
+    "roty": 12,
+    "rotz": 62
+  },
+  "view": {
+    "theta": 2.3911,
+    "phi": 2.6704,
+    "dist": 3.776
+  }
+}
